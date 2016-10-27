@@ -4,14 +4,24 @@
     xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/content_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:divider="@drawable/divider_horizontal"
+        android:orientation="vertical"
         tools:context="com.wydewy.medicalapp.MainActivity"
         tools:showIn="@layout/activity_main">
 
-    </RelativeLayout>
+        <FrameLayout
+            android:id="@+id/id_content"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></FrameLayout>
+
+        <include
+            android:id="@+id/bottom"
+            layout="@layout/bottom_btns" />
+    </LinearLayout>
 </layout>
 

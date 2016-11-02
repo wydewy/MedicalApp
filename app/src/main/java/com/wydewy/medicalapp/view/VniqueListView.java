@@ -19,8 +19,8 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import cn.wydewy.twelvegolf.R;
-import cn.wydewy.twelvegolf.util.ViewUtil;
+import com.wydewy.medicalapp.R;
+import com.wydewy.medicalapp.util.ViewUtil;
 
 public class VniqueListView extends ListView implements OnScrollListener {
 	// -----------顶部刷新相关-------------

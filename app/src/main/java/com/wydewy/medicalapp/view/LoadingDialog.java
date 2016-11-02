@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import cn.wydewy.twelvegolf.R;
+import com.wydewy.medicalapp.R;
 
 /**
  * 公用的弹出框
@@ -48,7 +48,7 @@ public class LoadingDialog {
         tipText.setText(msg);
 
         // 创建自定义样式的Dialog
-        Dialog loadingDialog = new Dialog(context, R.style.loading_dialog);
+        Dialog loadingDialog = new Dialog(context, R.style.AppBaseTheme);
         // 设置返回键无效
         loadingDialog.setCancelable(false);
         loadingDialog.setContentView(layout, new LinearLayout.LayoutParams(

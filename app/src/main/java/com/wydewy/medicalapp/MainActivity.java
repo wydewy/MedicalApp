@@ -1,9 +1,12 @@
 package com.wydewy.medicalapp;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.wydewy.medicalapp.databinding.ActivityMainBinding;
@@ -79,11 +82,31 @@ public class MainActivity extends BaseActivity {
                     setSelect(0);
                     break;
                 case R.id.id_tab2:
-                    setSelect(1);
+                    if (MedicalApplication.getInstance().checkLogin()) {
+                        setSelect(1);
+                    }else {
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    }
                     break;
 
             }
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            startActivity(new Intent(this,SettingsActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

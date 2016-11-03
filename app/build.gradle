@@ -4,7 +4,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
 
-    dataBinding{
+    dataBinding {
         enabled = true
     }
 
@@ -16,6 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -26,12 +27,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testCompile 'junit:junit:4.12'
-
     compile files('libs/org.apache.http.legacy.jar')
     compile files('libs/fastjson-1.2.7.jar')
     compile 'me.imid.swipebacklayout.lib:library:1.0.0'
@@ -40,31 +39,9 @@ dependencies {
     compile 'me.codeboy.android:cycle-view-pager:1.0.0'
     compile 'com.github.bmelnychuk:atv:1.2.+'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-    compile 'com.android.support:appcompat-v7:24.1.1'
-    compile 'com.android.support:design:24.1.1'
-    compile 'com.android.support:support-v4:24.1.1'
-    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
-    // Dependency for Google Sign-In
-    compile 'com.google.android.gms:play-services-auth:9.4.0'
-    compile 'com.paypal.sdk:paypal-android-sdk:2.14.4'
-    //adyen
-    testCompile 'org.mockito:mockito-core:1.+'
-    testCompile 'com.google.guava:guava:19.0'
-    testCompile 'org.robolectric:robolectric:3.1.2'
-    //    sharesdk
-    compile files('libs/MobCommons-2016.0830.1940.jar')
-    compile files('libs/MobTools-2016.0830.1940.jar')
-    compile files('libs/ShareSDK-Core-2.7.7.jar')
-    compile files('libs/ShareSDK-Email-2.7.7.jar')
-    compile files('libs/ShareSDK-Facebook-2.7.7.jar')
-    compile files('libs/ShareSDK-GooglePlus-2.7.7.jar')
-    compile files('libs/ShareSDK-QQ-2.7.7.jar')
-    compile files('libs/ShareSDK-QZone-2.7.7.jar')
-    compile files('libs/ShareSDK-ShortMessage-2.7.7.jar')
-    compile files('libs/ShareSDK-SinaWeibo-2.7.7.jar')
-    compile files('libs/ShareSDK-TencentWeibo-2.7.7.jar')
-    compile files('libs/ShareSDK-Twitter-2.7.7.jar')
-    compile files('libs/ShareSDK-Wechat-Core-2.7.7.jar')
-    compile files('libs/ShareSDK-Wechat-Favorite-2.7.7.jar')
-    compile files('libs/ShareSDK-Wechat-Moments-2.7.7.jar')
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:support-vector-drawable:24.2.1'
+    testCompile 'junit:junit:4.12'
 }
